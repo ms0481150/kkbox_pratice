@@ -26,6 +26,9 @@ def get_access_token():
     #取得response中的access_token
     return access_token.json()["access_token"]
 
+#===================各種功能===========================
+
+
 #取得排行榜名稱
 def get_chart():
     access_token = get_access_token()
@@ -86,24 +89,3 @@ def get_tracks_in_chart(chart_id):
     return result
 
 
-#查詢展示
-#get_chart()
-#print("============================================")
-'''
-def type_chart_id_want_to_insert():
-    try:
-        print("type a chart id you want: ")
-        chart_id = input()
-
-        #LOADING效果
-        print("Loading",end = "")
-        for i in range(10):
-            print(".",end = '',flush = True)
-            time.sleep(0.5)
-        print("")
-
-        #get_tracks_in_chart(chart_id)
-        #insert_chart_data_into_table(id)
-    except:
-        print("please type a correct id")
-'''
