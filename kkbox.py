@@ -1,5 +1,6 @@
 import requests
 import time
+from client_data import get_client_data
 #API文件 https://docs-zhtw.kkbox.codes/#overview
 
 #取得token
@@ -17,8 +18,8 @@ def get_access_token():
     #資料
     data = {
         "grant_type": "client_credentials",
-        "client_id": "fa84eed68d045d3c01e8acff9dc20c8f",
-        "client_secret": "2021815e2d618516c4a75cfcc42505cc"
+        "client_id": get_client_data.get_id(),
+        "client_secret": get_client_data.get_secret()
     }
 
     access_token = requests.post(url=url, headers=headers, data=data)
